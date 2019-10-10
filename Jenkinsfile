@@ -8,9 +8,16 @@ pipeline {
     }
     stage('Boot ') {
       parallel {
-        stage('Boot ') {
-          steps {
-            bat 'echo "hello world"'
+        stages {
+          stage('Boot ') {
+            steps {
+              bat 'echo "Boot"'
+            }
+          }
+          stage('Boot Build') {
+            steps {
+              bat 'echo "Boot Build"'
+            }
           }
         }
         stage('Operational') {
